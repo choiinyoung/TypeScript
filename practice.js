@@ -1,3 +1,8 @@
+// interface Student {
+//   name: string;
+//   age: number;
+//   height: number;
+// }
 var array = [
     { name: "kim", age: 17, height: 182 },
     { name: "lee", age: 39, height: 172 },
@@ -7,7 +12,15 @@ var array = [
     { name: "kang", age: 22, height: 164 },
     { name: "cho", age: 28, height: 167 },
 ];
-console.log(array.);
-// const result: Student = (x,y) => {
-//   if (
-// }
+var result = function (arr) {
+    var nameArr = [];
+    arr.map(function (el) {
+        if (el.age >= 25) {
+            if (el.height >= 175)
+                nameArr.push(el.name);
+        }
+    });
+    return nameArr;
+};
+var resultAr = result(array);
+console.log(resultAr);
