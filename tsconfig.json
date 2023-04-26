@@ -1,0 +1,6 @@
+{
+  "conpilerOptions": {
+    "target":"ES5",
+    "module":"commonJS"
+  }
+}
