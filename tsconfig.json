@@ -1,6 +1,10 @@
 {
-  "conpilerOptions": {
-    "target":"ES5",
-    "module":"commonJS"
-  }
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES5",
+    "module": "commonJS",
+    "outDir": "./0902/dist"
+  },
+  "include": ["0902/src/**/*"],
+  "exclude": ["node_modules"]
 }

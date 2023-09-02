@@ -22,10 +22,10 @@ var MemberGrade;
 })(MemberGrade || (MemberGrade = {}));
 var userGrade = 1;
 if (userGrade !== 3) {
-    alert("관리자가 아님");
+    console.log("관리자가 아님");
 }
 if (userGrade !== MemberGrade.admin) {
-    alert("관리자가 아님");
+    console.log("관리자가 아님");
 }
 // Union
 var unionType = 1;
