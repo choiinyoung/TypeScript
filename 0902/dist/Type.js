@@ -17,7 +17,7 @@ console.log(a);
 // 도달되지 않는 코드  실행이 종료되지x 무한으로 반복되는 함수 or 오류 발생시키기 위해
 var neverTest = function () {
     while (true) {
-        console.log("함수가 실행중입니다요ddsssfff");
+        console.log("함수가 실행중!!");
     }
 };
 function sayName(value) {
@@ -28,3 +28,14 @@ function sayName(value) {
         return value;
     }
 }
+// 유니온타입
+// 하나의 변수에 지정할 수 있는 타입이 여러 개 일떄
+// 두 개 이상의 타입을 가지는 변수는 any타입이 아닌 유니온 탕비을 사용하는 것이 관습
+// 타입스크립트 컴파일러가 런타임 도중 잘못된 값이 지정될 경우 감지해 오류 바로 해결가능
+var x;
+var student = {
+    // name: "인영",
+    height: "167",
+    weight: 65,
+};
+console.log(student);
