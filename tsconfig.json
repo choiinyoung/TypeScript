@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
-    "strict": true,
+    "strict": true, //strict 관련, noimplicit~ 관련 모드 전부 켜기
     "target": "ES5",
-    "module": "commonJS",
-    "outDir": "./0902/dist"
+    "module": "commonJS", //무슨 import 문법 쓸건지 'commonjs', 'amd', 'es2015', 'esnext'
+    "outDir": "./0902/dist",  //결과물 저장 경로
+    "removeComments": true, //컴파일시 주석제거 
   },
   "include": ["0902/src/**/*"],
   "exclude": ["node_modules"]
