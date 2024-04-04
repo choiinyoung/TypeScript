@@ -66,3 +66,53 @@ function sum3(a: number, b = 2024): number {
 console.log(sum3(10, undefined)); // 2032
 // console.log(sum3(10, 20, 30)); // err
 console.log(sum3(10)); // 2032
+
+// Rest 문법이 적용된 매개변수
+// 전개문법으로 받은 매개변수는 배열이기 때문에 타입을 배열로 받음
+function sum4(...numbers: number[]): number {
+  return numbers.reduce((result, number) => result + number, 0);
+}
+
+console.log(sum4(10, 20, 30)); // 60
+console.log(sum4(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)); // 55
+
+// this
+// this의 타입을 정할 떄는 함수의 첫 번째 매개변수 자리애 this를 쓰고 타입입력
+// 매개변수와 같이 this의 타입을 적어주지만 실제로 인자값을 받는 매개변수는 this:타입을 제외한 나머지임
+interface Userf {
+  name: string;
+  age: number;
+  init(this: Userf): () => {};
+}
+
+let userf: Userf = {
+  name: "inyoung",
+  age: 20,
+  init: function (this: Userf) {
+    return () => {
+      return this.age;
+    };
+  },
+};
+
+let getAgef = userf.init();
+let agef = getAgef();
+console.log(agef); // 20
+
+// 콜백에서의 this
+// 콜백 함수에서 this는 콜백으로 함수가 전달 되었을 때 this를 구분해야함
+
+// interface BrowserEL {
+//   addClickListener(onclick: (this: void, e: Event) => void): void;
+// }
+
+// class Handeler {
+//   info: string;
+//   onClick(this: void, e: Event) {
+//     // BrowserEL의 this타입은 void인데 Handelr라고 타입선언하면 err
+//     console.log("clicked!");
+//   }
+// }
+
+// let handelr = new Handeler();
+// browserEL.addClickListener(handelr.onClick);
