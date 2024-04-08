@@ -49,13 +49,3 @@ var userf = {
 var getAgef = userf.init();
 var agef = getAgef();
 console.log(agef);
-var Handeler = (function () {
-    function Handeler() {
-    }
-    Handeler.prototype.onClick = function (e) {
-        console.log("clicked!");
-    };
-    return Handeler;
-}());
-var handelr = new Handeler();
-browserEL.addClickListener(handelr.onClick);
